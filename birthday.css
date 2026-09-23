@@ -1,0 +1,1297 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #05040b;
+    color: white;
+    font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* ================= PARTICLES ================= */
+
+#particles {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+
+    color: #d99cff;
+
+    opacity: 0;
+
+    animation: floatParticle linear infinite;
+}
+
+@keyframes floatParticle {
+
+    0% {
+        transform:
+            translateY(100vh)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .7;
+    }
+
+    85% {
+        opacity: .7;
+    }
+
+    100% {
+        transform:
+            translateY(-10vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 8%;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+
+    background: rgba(5, 4, 11, .82);
+
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid
+        rgba(210, 140, 255, .15);
+}
+
+.logo {
+    font-family: "Great Vibes", cursive;
+
+    font-size: 30px;
+
+    color: #e3a5ff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    color: #bdb3c9;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: #e4a8ff;
+}
+
+.menu-btn {
+    display: none;
+
+    background: none;
+    border: none;
+
+    color: white;
+
+    font-size: 24px;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 720px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 80px 9%;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 75% 45%,
+            rgba(145, 71, 190, .23),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 15% 70%,
+            rgba(80, 70, 170, .14),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #05040b,
+            #0c0819,
+            #170d29
+        );
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    right: -200px;
+    top: 100px;
+
+    background: #9c55ce;
+
+    opacity: .07;
+
+    filter: blur(100px);
+}
+
+.hero-content {
+    max-width: 600px;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.eyebrow {
+    color: #a58baa;
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 82px;
+
+    font-weight: 500;
+
+    line-height: .85;
+}
+
+.hero h1 span {
+    display: block;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: 115px;
+
+    color: #df9cff;
+
+    margin-top: 15px;
+
+    text-shadow:
+        0 0 25px rgba(216, 137, 255, .3);
+}
+
+.typing-text {
+    margin-top: 35px;
+
+    color: #bcb2c7;
+
+    font-size: 14px;
+
+    min-height: 25px;
+}
+
+.main-btn {
+    display: inline-flex;
+
+    gap: 15px;
+
+    align-items: center;
+
+    margin-top: 30px;
+
+    padding: 15px 25px;
+
+    border-radius: 40px;
+
+    text-decoration: none;
+
+    color: #201127;
+
+    background: linear-gradient(
+        135deg,
+        #f0b5ff,
+        #b979df
+    );
+
+    box-shadow:
+        0 0 30px rgba(207, 125, 255, .2);
+
+    transition: .3s;
+}
+
+.main-btn:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 40px rgba(207, 125, 255, .3);
+}
+
+
+/* ================= CAKE ================= */
+
+.cake-container {
+    width: 45%;
+
+    height: 500px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 3;
+}
+
+.moon {
+    position: absolute;
+
+    top: 25px;
+    right: 15%;
+
+    font-size: 75px;
+
+    color: #eadcff;
+
+    filter:
+        drop-shadow(
+            0 0 25px rgba(221, 191, 255, .6)
+        );
+
+    animation: moonFloat 4s ease-in-out infinite;
+}
+
+@keyframes moonFloat {
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.glow {
+    width: 330px;
+    height: 330px;
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background: #a84bd4;
+
+    opacity: .13;
+
+    filter: blur(70px);
+}
+
+
+/* CAKE */
+
+.cake {
+    width: 310px;
+
+    position: relative;
+
+    margin-top: 80px;
+}
+
+.candles {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    margin-bottom: -2px;
+}
+
+.candle {
+    width: 11px;
+    height: 55px;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #e9b7ff 0 5px,
+            #9353b2 5px 10px
+        );
+
+    border-radius: 5px;
+
+    position: relative;
+}
+
+.candle i {
+    position: absolute;
+
+    width: 13px;
+    height: 18px;
+
+    top: -20px;
+
+    background: #ffd36f;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 12px #ffc56b,
+        0 0 30px #ffb74e;
+
+    animation: flame .8s infinite alternate;
+}
+
+@keyframes flame {
+
+    from {
+        transform: scale(.85);
+    }
+
+    to {
+        transform:
+            scale(1.15)
+            translateY(-2px);
+    }
+}
+
+.cake-top {
+    height: 40px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4d7e9,
+            #bd83bd
+        );
+
+    border: 3px solid #9d5a9d;
+}
+
+.cake-body {
+    height: 170px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #552557,
+            #21102c
+        );
+
+    border: 2px solid #8d4c9b;
+
+    border-radius:
+        0 0 35px 35px;
+
+    box-shadow:
+        0 25px 60px rgba(143, 64, 177, .25);
+}
+
+.cake-body span {
+    font-family: "Great Vibes", cursive;
+
+    color: #d99bf1;
+
+    font-size: 27px;
+}
+
+.cake-body strong {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 40px;
+}
+
+.cake-body small {
+    color: #e6b1dd;
+
+    margin-top: 5px;
+}
+
+.cake-plate {
+    height: 15px;
+
+    width: 360px;
+
+    background: #6d4779;
+
+    border-radius: 50%;
+
+    margin-left: -25px;
+}
+
+
+/* ================= SECTIONS ================= */
+
+.message-section,
+.gallery-section,
+.wishes-section,
+.party-section {
+    padding: 110px 9%;
+
+    position: relative;
+
+    background: #07060f;
+}
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(50px);
+
+    transition:
+        opacity 1s,
+        transform 1s;
+}
+
+.reveal.active {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* ================= MESSAGE ================= */
+
+.message-section {
+    display: flex;
+
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 30% 50%,
+            rgba(127, 65, 160, .1),
+            transparent 35%
+        ),
+        #07060f;
+}
+
+.message-card {
+    max-width: 700px;
+
+    padding: 55px;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(31, 23, 47, .95),
+            rgba(12, 10, 22, .98)
+        );
+
+    border: 1px solid
+        rgba(214, 137, 255, .3);
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, .35);
+}
+
+.tape {
+    position: absolute;
+
+    width: 90px;
+    height: 28px;
+
+    top: -14px;
+    right: 60px;
+
+    background: rgba(216, 174, 214, .3);
+
+    transform: rotate(5deg);
+}
+
+.small-title {
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: #9d829f;
+
+    margin-bottom: 20px;
+}
+
+.message-card h2 {
+    font-family: "Great Vibes", cursive;
+
+    font-size: 50px;
+
+    color: #e2a0ff;
+
+    margin-bottom: 25px;
+}
+
+.message-card p:not(.small-title) {
+    color: #bcb2c2;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    margin-bottom: 15px;
+}
+
+.message-card h3 {
+    font-family: "Great Vibes", cursive;
+
+    color: #df9bd1;
+
+    font-size: 32px;
+
+    margin-top: 25px;
+}
+
+.surprise-btn {
+    margin-top: 25px;
+
+    padding: 12px 20px;
+
+    border: 1px solid #9d5db7;
+
+    border-radius: 30px;
+
+    background: transparent;
+
+    color: #dba2f2;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.surprise-btn:hover {
+    background: #9c55b5;
+
+    color: white;
+}
+
+
+/* ================= SURPRISE POPUP ================= */
+
+.surprise-box {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, .75);
+
+    backdrop-filter: blur(10px);
+}
+
+.surprise-box.show {
+    display: flex;
+
+    animation: fadeIn .4s;
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.surprise-content {
+    width: min(90%, 450px);
+
+    padding: 45px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #261332,
+            #0d0916
+        );
+
+    border: 1px solid #a65cc4;
+
+    position: relative;
+
+    animation: popup .5s;
+}
+
+@keyframes popup {
+
+    from {
+        transform: scale(.7);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.close-btn {
+    position: absolute;
+
+    right: 18px;
+    top: 12px;
+
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+.gift-icon {
+    font-size: 60px;
+
+    animation: giftBounce 1s infinite alternate;
+}
+
+@keyframes giftBounce {
+
+    to {
+        transform: translateY(-10px)
+                   rotate(5deg);
+    }
+}
+
+.surprise-content h2 {
+    font-family: "Great Vibes", cursive;
+
+    font-size: 40px;
+
+    color: #e4a2ff;
+
+    margin: 15px;
+}
+
+.surprise-content p {
+    color: #b9acbf;
+
+    line-height: 1.7;
+}
+
+.surprise-content span {
+    display: block;
+
+    margin-top: 20px;
+
+    color: #df9ad2;
+}
+
+
+/* ================= GALLERY ================= */
+
+.section-heading {
+    text-align: center;
+
+    margin-bottom: 60px;
+}
+
+.section-heading p {
+    color: #94779b;
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+    font-family: "Great Vibes", cursive;
+
+    font-size: 52px;
+
+    color: #df9fff;
+}
+
+.gallery {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 35px;
+}
+
+.photo-card {
+    padding: 10px 10px 20px;
+
+    background: #eee8ed;
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, .45);
+
+    transition: .5s;
+}
+
+.photo-card img {
+    width: 100%;
+
+    height: 310px;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.photo-caption {
+    color: #4c294f;
+
+    text-align: center;
+
+    padding-top: 15px;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: 25px;
+}
+
+.photo-one {
+    transform: rotate(-4deg);
+}
+
+.photo-two {
+    transform: rotate(2deg);
+}
+
+.photo-three {
+    transform: rotate(5deg);
+}
+
+.photo-card:hover {
+    transform:
+        rotate(0)
+        translateY(-15px)
+        scale(1.03);
+}
+
+
+/* ================= WISHES ================= */
+
+.wishes-section {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(111, 56, 143, .12),
+            transparent 45%
+        ),
+        #05040b;
+}
+
+.wish-grid {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.wish-card {
+    padding: 35px 25px;
+
+    text-align: center;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30, 22, 47, .9),
+            rgba(10, 8, 18, .9)
+        );
+
+    border: 1px solid
+        rgba(204, 128, 242, .25);
+
+    transition: .4s;
+}
+
+.wish-card:hover {
+    transform: translateY(-10px);
+
+    border-color: #b56ed1;
+}
+
+.wish-icon {
+    font-size: 35px;
+
+    color: #df9fff;
+
+    margin-bottom: 15px;
+}
+
+.wish-card h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 29px;
+
+    margin-bottom: 10px;
+}
+
+.wish-card p {
+    color: #a9a0af;
+
+    line-height: 1.7;
+
+    font-size: 13px;
+}
+
+
+/* ================= PARTY ================= */
+
+.party-section {
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(141, 65, 175, .15),
+            transparent 45%
+        ),
+        #080610;
+}
+
+.party-content {
+    max-width: 850px;
+
+    margin: auto;
+}
+
+.party-content h2 {
+    font-family: "Great Vibes", cursive;
+
+    color: #e3a0ff;
+
+    font-size: 65px;
+
+    margin-bottom: 15px;
+}
+
+.party-subtitle {
+    color: #a9a0b0;
+
+    margin-bottom: 40px;
+}
+
+.question-card,
+.reply-box,
+.rsvp {
+    padding: 35px;
+
+    margin-top: 25px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(25, 18, 38, .85);
+
+    border: 1px solid
+        rgba(211, 137, 255, .22);
+}
+
+.question-card h3,
+.reply-box h3,
+.rsvp h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 29px;
+
+    margin-bottom: 25px;
+}
+
+.party-options {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.party-options button {
+    min-width: 150px;
+
+    padding: 18px;
+
+    border-radius: 15px;
+
+    border: 1px solid
+        rgba(211, 137, 255, .3);
+
+    background: #100c1b;
+
+    color: #ddd0e4;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.party-options button:hover {
+    transform: translateY(-6px);
+
+    border-color: #d28bf0;
+
+    background: #241331;
+}
+
+.party-options button span {
+    display: block;
+
+    margin-top: 7px;
+}
+
+.choice-result {
+    color: #dba0f0;
+
+    margin-top: 25px;
+
+    min-height: 20px;
+}
+
+
+/* ================= REPLY ================= */
+
+.reply-box textarea {
+    width: 100%;
+
+    height: 120px;
+
+    resize: vertical;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    border: 1px solid
+        rgba(208, 132, 240, .3);
+
+    outline: none;
+
+    background: #0c0913;
+
+    color: white;
+
+    font-family: inherit;
+}
+
+.send-btn {
+    margin-top: 15px;
+
+    padding: 12px 22px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: #c77ee5;
+
+    color: #170b1c;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.send-btn:hover {
+    transform: translateY(-3px);
+}
+
+#replyResult,
+#rsvpResult {
+    color: #dba0f0;
+
+    margin-top: 15px;
+
+    min-height: 20px;
+}
+
+
+/* ================= RSVP ================= */
+
+.rsvp-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.rsvp-buttons button {
+    padding: 13px 22px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    transition: .3s;
+}
+
+.yes-btn {
+    background: #d98cf0;
+
+    border: none;
+
+    color: #1b0b21;
+}
+
+.maybe-btn {
+    background: transparent;
+
+    border: 1px solid #85518e;
+
+    color: #d4bfd8;
+}
+
+.rsvp-buttons button:hover {
+    transform: translateY(-4px);
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    text-align: center;
+
+    padding: 90px 20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #130b20,
+            #05040b
+        );
+}
+
+footer p {
+    color: #9b8da3;
+}
+
+footer h2 {
+    font-family: "Great Vibes", cursive;
+
+    font-size: 70px;
+
+    color: #e1a0ff;
+
+    margin: 5px;
+}
+
+.footer-line {
+    color: #a85fc4;
+
+    margin: 15px;
+}
+
+footer span {
+    color: #918593;
+
+    font-size: 12px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width: 850px) {
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 30px;
+    }
+
+    .hero-content {
+        max-width: 700px;
+    }
+
+    .cake-container {
+        width: 100%;
+    }
+
+    .gallery,
+    .wish-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-card {
+        max-width: 330px;
+
+        width: 100%;
+
+        margin: auto;
+
+        transform: rotate(0);
+    }
+
+}
+
+
+/* MOBILE NAV */
+
+@media(max-width: 600px) {
+
+    .navbar {
+        padding: 15px 20px;
+
+        height: auto;
+    }
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 65px;
+
+        left: 0;
+
+        width: 100%;
+
+        padding: 20px;
+
+        background: #0b0812;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .hero {
+        padding: 70px 20px;
+
+        min-height: 750px;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .hero h1 span {
+        font-size: 75px;
+    }
+
+    .cake {
+        width: 250px;
+    }
+
+    .cake-plate {
+        width: 290px;
+    }
+
+    .message-section,
+    .gallery-section,
+    .wishes-section,
+    .party-section {
+        padding: 75px 18px;
+    }
+
+    .message-card {
+        padding: 35px 23px;
+    }
+
+    .section-heading h2 {
+        font-size: 42px;
+    }
+
+    .party-content h2 {
+        font-size: 52px;
+    }
+
+    footer h2 {
+        font-size: 50px;
+    }
+
+}
